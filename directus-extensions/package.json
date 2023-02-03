@@ -1,0 +1,25 @@
+{
+  "name": "directus-extensions",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "build": "pnpm build:osm-autocomplete && pnpm copy",
+    "build:osm-autocomplete": "directus-extension build -t interface -i osm-autocomplete/index.ts -o dist/osm-autocomplete.js",
+    "dev": "pnpm build:osm-autocomplete -w --no-minify",
+    "copy": "node ./scripts/copy.js"
+  },
+  "devDependencies": {
+    "@directus/extensions-sdk": "9.22.4",
+    "@rollup/plugin-commonjs": "^24.0.1",
+    "@types/lodash": "^4.14.191",
+    "typescript": "^4.9.5",
+    "vue": "^3.2.47",
+    "vue-i18n": "^9.2.2"
+  },
+  "dependencies": {
+    "axios": "^1.3.1",
+    "lodash": "^4.17.21",
+    "micromustache": "^8.0.3",
+    "sass": "^1.58.0"
+  }
+}
